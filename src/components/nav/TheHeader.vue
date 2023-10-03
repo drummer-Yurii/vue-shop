@@ -10,7 +10,7 @@
         </li>
         <li>
           <router-link to="/cart">Cart</router-link>
-          <BaseBadge mode="elegant">{{ cart.qty }}</BaseBadge>
+          <base-badge mode="elegant">{{ cartQty }}</base-badge>
         </li>
         <li v-if="isLoggedIn">
           <router-link to="/admin">Admin</router-link>
@@ -26,8 +26,10 @@
 
 <script>
 import { mapActions } from 'vuex';
+import BaseBadge from '../ui/BaseBadge.vue';
 
 export default {
+  components: { BaseBadge },
   name: 'TheHeader',
   computed: {
     cartQty() {
